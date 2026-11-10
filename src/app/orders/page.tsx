@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import Link from "next/link";
 import { OrdersBoard } from "../../components/orders-board";
 import OrdersSummary from "../../components/orders-summary";
 import type { OrderSummary } from "../../types/order-summary";
@@ -33,6 +34,9 @@ export default async function OrdersPage() {
   return (
     <main>
       <h1>Pedidos</h1>
+      <p>
+        <Link href="/orders/new">Nueva orden</Link>
+      </p>
       <form action={logout}>
         <button type="submit">Cerrar sesión</button>
       </form>
